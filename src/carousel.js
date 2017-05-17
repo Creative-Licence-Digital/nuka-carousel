@@ -141,6 +141,16 @@ const Carousel = React.createClass({
     }
   },
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.currentSlide !== prevState.currentSlide) {
+      this.animateSlide();
+      this.props.afterSlide(this.state.currentSlide);
+      this.resetAutoplay();
+      this.setExternalData();
+    }
+  },
+
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       slideCount: nextProps.children.length
@@ -501,11 +511,6 @@ const Carousel = React.createClass({
 
     this.setState({
       currentSlide: index
-    }, function() {
-      self.animateSlide();
-      this.props.afterSlide(index);
-      self.resetAutoplay();
-      self.setExternalData();
     });
   },
 
