@@ -1,6 +1,6 @@
 #nuka-carousel
 
-A Pure ReactJS Carousel Component
+A Pure ReactJS Carousel Component based on nuka-carousel v2.0.4
 
 ![http://i.imgur.com/UwP5gle.gif](http://i.imgur.com/UwP5gle.gif)
 
